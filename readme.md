@@ -22,4 +22,4 @@ In this workshop, we are building an E-Commerce application from scratch. The pr
 - JUnit: A popular unit testing framework for Java, essential for practicing Test-Driven Development.
 
 ## Getting Started
-To get started with the project, refer to the documentation and guides provided within the repository for detailed instructions on setting up the project and running tests.
+To get started with the project, refer to the [documentation](docs/) and guides provided within the repository for detailed instructions on setting up the project and running tests.
