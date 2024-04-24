@@ -1,15 +1,14 @@
 package pl.jkanclerz.ecommerce.catalog;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 public class ProductCatalog {
 
-    private final ArrayListProductStorage productStorage;
+    private final ProductStorage productStorage;
 
-    public ProductCatalog(ArrayListProductStorage productStorage) {
+    public ProductCatalog(ProductStorage productStorage) {
         this.productStorage = productStorage;
     }
 
