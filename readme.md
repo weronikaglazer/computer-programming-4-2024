@@ -7,6 +7,10 @@ This project aims to provide you with hands-on experience in
 * Best practices and practices in programming
 * Java and Spring Boot environment
 
+## Project history, git TAGS
+
+![Project history](docs/assets/00__browse_by_tag.gif)
+
 ## Project Overview
 In this workshop, we are building an E-Commerce application from scratch. The project will cover a range of functionalities typical of an E-Commerce platform, product browsing, cart management, order processing, and more.
 
