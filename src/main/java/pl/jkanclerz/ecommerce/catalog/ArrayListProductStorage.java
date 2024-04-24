@@ -28,5 +28,4 @@ public class ArrayListProductStorage implements ProductStorage {
                 .findFirst()
                 .get();
     }
-
 }
