@@ -10,6 +10,9 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import pl.jkanclerz.ecommerce.catalog.ProductCatalog;
+import pl.jkanclerz.ecommerce.sales.offering.Offer;
+import pl.jkanclerz.ecommerce.sales.reservation.AcceptOfferRequest;
+import pl.jkanclerz.ecommerce.sales.reservation.ReservationDetails;
 
 import java.math.BigDecimal;
 
