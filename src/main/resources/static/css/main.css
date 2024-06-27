@@ -1,3 +1,11 @@
+body {
+    color: red;
+}
+
+h1 {
+    text-align: center;
+}
+
 .products {
     list-style: none;
     display: flex;
@@ -7,9 +15,7 @@
 
 .product {
     border-top: 1px solid black;
-
     padding-bottom: 2rem;
-    border-bottom: 1px solid black;
 }
 
 .product__price {

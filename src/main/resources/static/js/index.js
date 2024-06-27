@@ -10,7 +10,7 @@ const createHtmlEl = (productData) => {
             <img src="https://picsum.photos/id/237/200/300" />
             <div class="product__price">
                 <span>${productData.price}</span>
-                <button data-id="${productData.id}">Add to cart +</button>
+                <button data-id="${productData.id}">Add to cart</button>
             </div>
         </div>
     `
