@@ -21,7 +21,7 @@ public class SalesController {
         return sales.getCurrentOffer(customerId);
     }
 
-    @PostMapping("/api/add-product/{productId}")
+    @PostMapping("/api/add-to-cart/{productId}")
     void addProduct(@PathVariable(name = "productId") String productId) {
         var customerId = getCurrentCustomerId();
         sales.addProduct(customerId, productId);

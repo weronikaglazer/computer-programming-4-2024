@@ -1,12 +1,6 @@
 package pl.wglazer.ecommerce.catalog;
 
 import org.junit.jupiter.api.Test;
-
-import pl.wglazer.ecommerce.catalog.ArrayListProductStorage;
-import pl.wglazer.ecommerce.catalog.Product;
-import pl.wglazer.ecommerce.catalog.ProductCatalog;
-
-import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
 
 import java.math.BigDecimal;

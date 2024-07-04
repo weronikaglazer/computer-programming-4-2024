@@ -1,12 +1,6 @@
 package pl.wglazer.creditcard;
 
 import org.junit.jupiter.api.Test;
-
-import pl.wglazer.creditcard.CreditAlreadyAssignedException;
-import pl.wglazer.creditcard.CreditBelowThresholdException;
-import pl.wglazer.creditcard.CreditCard;
-import pl.wglazer.creditcard.NotEnoughMoneyException;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.math.BigDecimal;

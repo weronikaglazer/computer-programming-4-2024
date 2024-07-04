@@ -4,8 +4,30 @@
         <link href="/css/main.css" rel="stylesheet"/>
     </head>
     <body>
-        <h1>Welcome to my shop!</h1>
-        <ul id="productList" class="products"></ul>
+        <header>
+            <div class="offer">
+                <div>
+                    <span>Total:</span>
+                    <span id="offer__total">0.0</span>
+                </div>
+                <div>
+                    <span>Items in cart:</span>
+                    <span id="offer__items-count">0</span>
+                </div>
+                <form id="checkout-form">
+                    <input name="firstname" placeholder="Jimmy"/>
+                    <input name="lastname" placeholder="Jones"/>
+                    <input name="email" placeholder="jimmyjones@gmail.com"/>
+                    <button type="submit">Accept Offer</button>
+                </form>
+            </div>
+        </header>
+        <div class="catalog">
+            <h1 class="catalog__header">Welcome to my ecommerce!</h1>
+            <ul id="productList" class="catalog__products">
+                
+            </ul>
+        </div>
         <script src="/js/index.js" type="text/javascript"></script>
     </body>
 </html>

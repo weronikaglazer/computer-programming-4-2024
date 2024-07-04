@@ -3,13 +3,6 @@ package pl.wglazer.ecommerce.payu;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.client.RestTemplate;
 
-import pl.wglazer.ecommerce.payu.Buyer;
-import pl.wglazer.ecommerce.payu.OrderCreateRequest;
-import pl.wglazer.ecommerce.payu.OrderCreateResponse;
-import pl.wglazer.ecommerce.payu.PayU;
-import pl.wglazer.ecommerce.payu.PayUCredentials;
-import pl.wglazer.ecommerce.payu.Product;
-
 import java.util.Arrays;
 import java.util.UUID;
 
@@ -34,20 +27,20 @@ public class PayUTest {
                 .setNotifyUrl("https://your.eshop.com/notify")
                 .setCustomerIp("127.0.0.1")
                 .setMerchantPosId("300746")
-                .setDescription("My digital product")
+                .setDescription("Ebook description")
                 .setCurrencyCode("PLN")
                 .setTotalAmount(15500)
                 .setExtOrderId(UUID.randomUUID().toString())
                 .setBuyer(new Buyer()
-                        .setEmail("kuba.doe@example.com")
-                        .setFirstName("john")
-                        .setLastName("doe")
+                        .setEmail("weronika.glazer@example.com")
+                        .setFirstName("Weronika")
+                        .setLastName("Glazer")
                         .setLanguage("pl")
                 )
                 .setProducts(Arrays.asList(
                         new Product()
-                                .setName("Nice product")
-                                .setUnitPrice(15500)
+                                .setName("Ebook")
+                                .setUnitPrice(34500)
                                 .setQuantity(1)
                 ));
 
