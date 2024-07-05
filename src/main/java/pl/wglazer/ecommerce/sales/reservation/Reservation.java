@@ -11,18 +11,21 @@ public class Reservation {
     private CustomerDetails customerDetails;
     private BigDecimal total;
     private Instant paidAt;
+    private String transactionId;
 
-    public Reservation(String reservationId, CustomerDetails customerDetails, BigDecimal total) {
+    public Reservation(String reservationId, CustomerDetails customerDetails, BigDecimal total, String transactionId) {
         this.reservationId = reservationId;
         this.customerDetails = customerDetails;
         this.total = total;
+        this.transactionId = transactionId;
     }
 
     public static Reservation of(String reservationId, String customerId, AcceptOfferRequest acceptOfferRequest, Offer offer, PaymentDetails paymentDetails) {
         return new Reservation(
             reservationId,
             new CustomerDetails(customerId, acceptOfferRequest.getFname(), acceptOfferRequest.getLname(), acceptOfferRequest.getEmail()),
-            offer.getFinalPrice()
+            offer.getFinalPrice(),
+            paymentDetails.getTransactionId()
         );
     }
 

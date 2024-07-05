@@ -15,7 +15,7 @@ In order to store, load, sort, and manage data effectively, lets introduce datab
 
 ### SQL Hello world
 
-`localhost:9999/h2-console`
+`localhost:8888/h2-console`
 
 ### Integration test
 

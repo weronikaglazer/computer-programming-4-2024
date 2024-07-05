@@ -4,17 +4,24 @@
         <link href="/css/main.css" rel="stylesheet"/>
     </head>
     <body>
+        <div id="logo">
+            <img src="https://static.vecteezy.com/system/resources/previews/013/743/472/original/boho-monstera-leaf-freehand-drawing-flat-design-free-png.png" />
+        </div>
+        <h1 class="catalog__header">Welcome to my ecommerce!</h1>
         <header>
             <div class="offer">
-                <div>
-                    <span>Total:</span>
-                    <span id="offer__total">0.0</span>
-                </div>
-                <div>
-                    <span>Items in cart:</span>
-                    <span id="offer__items-count">0</span>
+                <div class="offer__info">
+                    <div>
+                        <span>Total:</span>
+                        <span id="offer__total">0 PLN</span>
+                    </div>
+                    <div>
+                        <span>Items in cart:</span>
+                        <span id="offer__items-count">0</span>
+                    </div>
                 </div>
                 <form id="checkout-form">
+                    <span>Please fill out your information :></span>
                     <input name="firstname" placeholder="Jimmy"/>
                     <input name="lastname" placeholder="Jones"/>
                     <input name="email" placeholder="jimmyjones@gmail.com"/>
@@ -23,7 +30,6 @@
             </div>
         </header>
         <div class="catalog">
-            <h1 class="catalog__header">Welcome to my ecommerce!</h1>
             <ul id="productList" class="catalog__products">
                 
             </ul>

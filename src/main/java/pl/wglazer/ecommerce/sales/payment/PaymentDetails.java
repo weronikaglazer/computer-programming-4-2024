@@ -1,13 +1,19 @@
 package pl.wglazer.ecommerce.sales.payment;
 
 public class PaymentDetails {
-    private final String url;
+    private final String paymentUrl;
+    private final String transactionId;
 
-    public PaymentDetails(String url) {
-        this.url = url;
+    public PaymentDetails(String paymentUrl, String transactionId) {
+        this.paymentUrl = paymentUrl;
+        this.transactionId = transactionId;
     }
 
     public String getPaymentUrl() {
-        return url;
+        return paymentUrl;
+    }
+
+    public String getTransactionId() {
+        return transactionId;
     }
 }

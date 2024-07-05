@@ -10,12 +10,12 @@ const getCurrentOffer = () => {
 
 const refreshOffer = () => {
     const offerTotalEl = document.querySelector("#offer__total")
-    const itemsCountEl = document.querySelector("#offer_items-count")
+    const itemsCountEl = document.querySelector("#offer__items-count")
 
     getCurrentOffer()
         .then(offer => {
             offerTotalEl.textContent = `${offer.finalPrice} PLN`
-            itemsCountEl.textContent = `${offer.getItemsCount()}🛒`
+            itemsCountEl.textContent = `${offer.itemsCount}`
         })
 }
 
@@ -40,7 +40,7 @@ const createHtmlProductEl = (productData) => {
     const template = `
         <div class="product">
             <h4>${productData.name}</h4>
-            <img src="https://www.buyqualityplr.com/wp-content/uploads/edd/2017/12/Good-Ecommerce.png" width=200 height=200 />
+            <img src="https://i.pinimg.com/originals/27/78/de/2778de9b07bde42be532f9020be65467.png" width=200 height=200 />
             <div class="product__price">
                 <span>${productData.price}</span>
                 <button data-id="${productData.id}">Add to cart</button>

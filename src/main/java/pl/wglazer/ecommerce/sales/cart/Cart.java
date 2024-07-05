@@ -8,7 +8,7 @@ public class Cart {
     public static Cart empty() {
         return new Cart();
     }
-    private final HashMap<String, Integer> productsQuantities;
+    public final HashMap<String, Integer> productsQuantities;
 
     public Cart() {
         productsQuantities = new HashMap<>();

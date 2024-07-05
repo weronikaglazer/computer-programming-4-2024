@@ -1,21 +1,86 @@
 body {
-    color: red;
+    background: rgb(119, 159, 111);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 120px 150px;
+    color: black;
+}
+
+#logo img {
+    width: 150px;
+    height: 150px;
+}
+
+button {
+    width: 200px;
+    padding: 0.4em 1em;
+    background: white;
+    border-radius: 0.7%;
+    border: grey 1px solid;
+    margin: 0.5em
+}
+
+button:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.offer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.5em;
+    background: white;
+    border-radius: 0.7%;
+}
+
+.offer__info {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 150px;
+}
+
+input {
+    padding: 0.5em;
+    margin: 0.7em;
+    border: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
 }
 
 h1 {
     text-align: center;
+    color: white;
 }
 
-.products {
-    list-style: none;
+#productList {
     display: flex;
-    justify-content: space-around;
-    text-align: center;
+    list-style: none;
+    padding: 1em;
 }
 
 .product {
-    border-top: 1px solid black;
-    padding-bottom: 2rem;
+    background: white;
+    margin: 0.5em;
+    padding: 0.6em;
+    border-radius: 0.7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 350px;
+    width: 300px;
+
+}
+
+.product h4 {
+    font-size: 20px;
+    text-align: center;
 }
 
 .product__price {

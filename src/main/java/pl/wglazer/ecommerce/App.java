@@ -25,10 +25,10 @@ public class App {
     @Bean
     ProductCatalog createCatalog() {
         var catalog = new ProductCatalog(new ArrayListProductStorage());
-        var pid1 = catalog.addProduct("Puppy poster 1", "nice puppy poster");
+        var pid1 = catalog.addProduct("Monstera", "nice plant");
         catalog.changePrice(pid1, BigDecimal.valueOf(59.99));
 
-        var pid2 = catalog.addProduct("Puppy poster 2", "another nice puppy poster");
+        var pid2 = catalog.addProduct("Calathea", "another nice plant");
         catalog.changePrice(pid2, BigDecimal.valueOf(67.99));
 
         return catalog;

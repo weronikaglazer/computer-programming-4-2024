@@ -4,9 +4,11 @@ import java.math.BigDecimal;
 
 public class Offer {
     private BigDecimal finalPrice;
+    private final int itemsCount;
 
-    public Offer(BigDecimal finalPrice) {
+    public Offer(BigDecimal finalPrice, int itemsCount) {
         this.finalPrice = finalPrice;
+        this.itemsCount = itemsCount;
     }
 
     public BigDecimal getFinalPrice() {
@@ -14,6 +16,6 @@ public class Offer {
     }
 
     public Integer getItemsCount() {
-        return 0;
+        return this.itemsCount;
     }
 }

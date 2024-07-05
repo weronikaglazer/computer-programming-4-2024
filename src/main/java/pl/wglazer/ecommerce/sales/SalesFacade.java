@@ -40,8 +40,12 @@ public class SalesFacade {
     public void addProduct(String customerId, String productId) {
         Cart cart = getCartForCustomer(customerId);
 
-        cart.add(productId);
-
+        if (cart.isEmpty()) {
+            cartStorage.save(customerId, cart);
+            cart.add(productId);
+        } else {
+            cart.add(productId);
+        }
     }
 
     private Cart getCartForCustomer(String customerId) {
