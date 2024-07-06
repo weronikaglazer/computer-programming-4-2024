@@ -17,7 +17,7 @@ public class ProductCatalog {
     }
 
     public String addProduct(String name, String description) {
-        UUID id = UUID.randomUUID();
+        String id = UUID.randomUUID().toString();
         Product newProduct = new Product(id, name, description);
         productStorage.add(newProduct);
 

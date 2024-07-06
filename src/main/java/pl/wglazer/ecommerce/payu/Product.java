@@ -31,8 +31,4 @@ public class Product {
         this.quantity = quantity;
         return this;
     }
-
-    //     "name": "Wireless Mouse for Laptop",
-//            "unitPrice": "15000",
-//            "quantity": "1"
 }

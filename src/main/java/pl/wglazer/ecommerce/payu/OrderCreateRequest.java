@@ -12,6 +12,7 @@ public class OrderCreateRequest {
     String extOrderId;
     Buyer buyer;
     List<Product> products;
+    String continueUrl;
 
     public String getNotifyUrl() {
         return notifyUrl;
@@ -92,6 +93,10 @@ public class OrderCreateRequest {
     public OrderCreateRequest setProducts(List<Product> products) {
         this.products = products;
         return this;
+    }
+
+    public void setContinueUrl(String continueUrl) {
+        this.continueUrl = continueUrl;
     }
 
 }

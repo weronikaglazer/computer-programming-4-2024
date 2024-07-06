@@ -25,7 +25,6 @@ public class ArrayListProductStorage implements ProductStorage {
     public Product getProductBy(String id) {
         return products.stream()
                 .filter(product -> product.getId().equals(id))
-                .findFirst()
-                .get();
+                .findFirst().orElse(null);
     }
 }

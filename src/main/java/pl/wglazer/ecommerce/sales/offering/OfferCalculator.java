@@ -10,24 +10,22 @@ public class OfferCalculator {
         // every 5th for free
         // >100PLN -10PLN
         BigDecimal totalAmount = BigDecimal.ZERO;
-        BigDecimal totalDiscount = BigDecimal.valueOf(5);
 
         for (CartItem item : items) {
             
-            totalAmount = totalAmount.add(BigDecimal.valueOf(20).multiply(new BigDecimal(item.getQuantity())));
-        
-            // Calculate the number of free items
-            //int freeItems = quantity / 5;
+            BigDecimal price = item.getPrice();
+            Integer qty = item.getQuantity();
 
-            // Calculate the cost of the items after applying the "every 5th item free" rule
-            //double costForItems = (quantity - freeItems) * productPrice;
-            //totalAmount += costForItems;
+            int freeItems = qty / 5;
+            qty = qty - freeItems;
 
-            // Calculate discount for every 5th item
-            //totalDiscount += freeItems * productPrice;
+            totalAmount = totalAmount.add(price.multiply(new BigDecimal(qty)));
+
+            if (totalAmount.compareTo(new BigDecimal(100)) == 1) {
+                totalAmount = totalAmount.subtract(new BigDecimal(10));
+            }
         }
 
-        BigDecimal finalPrice = totalAmount.subtract(totalDiscount);
-        return new Offer(finalPrice, items.size());
+        return new Offer(totalAmount, items.size());
     }
 }

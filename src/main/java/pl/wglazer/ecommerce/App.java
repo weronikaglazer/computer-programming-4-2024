@@ -3,15 +3,16 @@ package pl.wglazer.ecommerce;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 import pl.wglazer.ecommerce.catalog.ArrayListProductStorage;
 import pl.wglazer.ecommerce.catalog.ProductCatalog;
+import pl.wglazer.ecommerce.payu.PayU;
+import pl.wglazer.ecommerce.payu.PayUCredentials;
+import pl.wglazer.ecommerce.payu.PayUMapper;
 import pl.wglazer.ecommerce.sales.SalesFacade;
 import pl.wglazer.ecommerce.sales.cart.HashMapCartStorage;
 import pl.wglazer.ecommerce.sales.offering.OfferCalculator;
-import pl.wglazer.ecommerce.sales.payment.PaymentDetails;
-import pl.wglazer.ecommerce.sales.payment.PaymentGateway;
-import pl.wglazer.ecommerce.sales.payment.RegisterPaymentRequest;
 import pl.wglazer.ecommerce.sales.reservation.ReservationRepository;
 
 import java.math.BigDecimal;
@@ -39,13 +40,11 @@ public class App {
         return new SalesFacade(
                 new HashMapCartStorage(),
                 new OfferCalculator(),
-                new PaymentGateway() {
-                    @Override
-                    public PaymentDetails registerPayment(RegisterPaymentRequest registerPaymentRequest) {
-                        return null;
-                    }
-                },
-                new ReservationRepository()
+                new PayU(new RestTemplate(), PayUCredentials.sandbox(
+                    "300746",
+                    "2ee86a66e5d97e3fadc400c9f19b065d")),
+                createCatalog(),
+                new PayUMapper()
         );
     }
 }

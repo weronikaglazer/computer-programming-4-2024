@@ -1,20 +1,19 @@
 package pl.wglazer.ecommerce.sales.cart;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import pl.wglazer.ecommerce.catalog.Product;
 
 public class Cart {
     public static Cart empty() {
         return new Cart();
     }
-    public final HashMap<String, Integer> productsQuantities;
+    public ArrayList<CartItem> listCartItems;
 
     public Cart() {
-        productsQuantities = new HashMap<>();
+        listCartItems = new ArrayList<>();
     }
 
-    public void add(String product) {
+    public void add(Product product) {
         if (!isInCart(product)) {
             putIntoCart(product);
         } else {
@@ -23,30 +22,31 @@ public class Cart {
     }
 
     public boolean isEmpty() {
-        return productsQuantities.values().isEmpty();
+        return listCartItems.isEmpty();
     }
 
     public int getItemsCount() {
-        return productsQuantities.values().size();
+        return listCartItems.size();
     }
 
-    public List<CartItem> getCartItems() {
-        return productsQuantities
-                .entrySet()
-                .stream()
-                .map(es -> new CartItem(es.getKey(), es.getValue()))
-                .collect(Collectors.toList());
+    public ArrayList<CartItem> getCartItems() {
+        return this.listCartItems;
     }
 
-    private void putIntoCart(String product) {
-        productsQuantities.put(product, 1);
+    private void putIntoCart(Product product) {
+        listCartItems.add(new CartItem(product.getId(), 1, product.getPrice()));
     }
 
-    private void increaseProductQuantity(String product) {
-        productsQuantities.put(product, productsQuantities.get(product) + 1);
+    private void increaseProductQuantity(Product product) {
+        var existingCartItem = listCartItems.stream().filter(x -> x.getProductId() == product.getId()).findFirst().orElse(null);
+
+        if (existingCartItem != null) {
+            existingCartItem.setQuantity(existingCartItem.getQuantity() + 1);
+        } 
+
     }
 
-    private boolean isInCart(String product) {
-        return productsQuantities.containsKey(product);
+    private boolean isInCart(Product product) {
+        return listCartItems.stream().filter(x -> x.getProductId() == product.getId()).findFirst().orElse(null) != null;
     }
 }

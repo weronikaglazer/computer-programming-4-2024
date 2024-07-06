@@ -1,7 +1,6 @@
 package pl.wglazer.ecommerce.sales;
 
 import org.springframework.web.bind.annotation.*;
-
 import pl.wglazer.ecommerce.sales.offering.Offer;
 import pl.wglazer.ecommerce.sales.reservation.AcceptOfferRequest;
 import pl.wglazer.ecommerce.sales.reservation.ReservationDetails;
@@ -30,6 +29,7 @@ public class SalesController {
     @PostMapping("/api/accept-offer")
     ReservationDetails acceptOffer(@RequestBody AcceptOfferRequest acceptOfferRequest) {
         var customerId = getCurrentCustomerId();
+
         return sales.acceptOffer(customerId, acceptOfferRequest);
     }
 

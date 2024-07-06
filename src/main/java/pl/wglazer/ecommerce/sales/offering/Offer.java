@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class Offer {
     private BigDecimal finalPrice;
-    private final int itemsCount;
+    private int itemsCount;
 
     public Offer(BigDecimal finalPrice, int itemsCount) {
         this.finalPrice = finalPrice;

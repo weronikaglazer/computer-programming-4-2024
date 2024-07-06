@@ -62,7 +62,6 @@ const initializeCartHandler = (productHtmlEl) => {
     })
 
     return productHtmlEl
-
 }
 
 

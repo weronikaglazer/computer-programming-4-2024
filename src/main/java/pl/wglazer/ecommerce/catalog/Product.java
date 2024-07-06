@@ -1,7 +1,6 @@
 package pl.wglazer.ecommerce.catalog;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 public class Product {
     private String id;
@@ -12,8 +11,8 @@ public class Product {
     Product() {
     }
 
-    public Product(UUID id, String name, String description) {
-        this.id = id.toString();
+    public Product(String id, String name, String description) {
+        this.id = id;
         this.name = name;
         this.description = description;
     }

@@ -6,6 +6,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+import pl.wglazer.ecommerce.sales.payment.PaymentGateway;
+
 public class PayU {
     RestTemplate http;
     private PayUCredentials credentials;
