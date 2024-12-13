@@ -1,0 +1,19 @@
+name: Release my package
+on: 
+  push:
+    tags: 
+      - '*.*.*-rc'
+jobs:
+  ReleaseApp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: coretto
+      - name: Compile it!
+        run: mvn compile
+      - name: Create .jar package
+        run: mvn -Dskiptests -package
+      - run: ls -la target/
