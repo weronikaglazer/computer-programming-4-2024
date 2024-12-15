@@ -15,7 +15,7 @@ jobs:
       - name: Compile it!
         run: mvn compile
       - name: Create .jar package
-        run: mvn -Dskiptests -package
+        run: mvn -Dskiptests package
       - run: ls -la target/
       - run: mv target/*.jar target/app.jar
       - uses: ncipollo/release-action@v1
